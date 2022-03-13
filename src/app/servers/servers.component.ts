@@ -16,6 +16,7 @@ export class ServersComponent implements OnInit {
   username = '';
   emtpyUsername :boolean = true;
   serverCreated :boolean = false;
+  servers = ['TestServer', 'TestServer 2'];
 
   constructor() { 
     setTimeout(() => {
@@ -27,6 +28,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
     this.serverCreated = true;
   }

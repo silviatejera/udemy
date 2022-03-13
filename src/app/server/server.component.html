@@ -1,1 +1,5 @@
-<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!-- <p [ngStyle]="{'background-color': getColor()}" -->
+<p [ngStyle]="{'backgroundColor': getColor()}"
+[ngClass]="{online: serverStatus === 'online'}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+
+<!-- ngClass expects the classname and when to apply it, className can go between single quotes if it contains dash in the middlle -->
