@@ -12,7 +12,9 @@ export class ServersComponent implements OnInit {
 
   allowNewServer = false;
   serverCreationStatus = 'No server was created';
-  serverName = '';
+  serverName = 'TestServer';
+  username = '';
+  emtpyUsername :boolean = true;
 
   constructor() { 
     setTimeout(() => {
@@ -24,11 +26,20 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
-    this.serverCreationStatus = 'Server was created';
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServerName(event: any){
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onClearUserNme(){
+    this.username = '';
+    this.emtpyUsername = true;
+  }
+
+  onUserNameChange(event){
+    this.emtpyUsername = event.target.value.length==0;
   }
 
 }

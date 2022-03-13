@@ -1,6 +1,7 @@
 <label>Server Name</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
-<p>{{serverName}}</p>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <p>{{serverName}}</p> -->
 <button class="btn btn-primary"
 [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server</button>
@@ -8,6 +9,11 @@
 <p [innerText] = "allowNewServer"></p>
 <p>{{ allowNewServer }}</p>
 <p>{{ serverCreationStatus }}</p>
+
+<h2>Assignment 2</h2>
+<input type="text" [(ngModel)] = "username" (input)="onUserNameChange($event)">
+<p>Username: {{username}}</p>
+<button class="btn btn-primary" [disabled]="emtpyUsername" (click)="onClearUserNme()">Clear username</button>
 
 <app-server></app-server>
 <app-server></app-server>

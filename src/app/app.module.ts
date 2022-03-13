@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //needed to use 2 way data-binding
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
