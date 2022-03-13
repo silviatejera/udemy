@@ -8,12 +8,16 @@
 
 <p [innerText] = "allowNewServer"></p>
 <p>{{ allowNewServer }}</p>
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
 
 <h2>Assignment 2</h2>
 <input type="text" [(ngModel)] = "username" (input)="onUserNameChange($event)">
 <p>Username: {{username}}</p>
 <button class="btn btn-primary" [disabled]="emtpyUsername" (click)="onClearUserNme()">Clear username</button>
 
+<p *ngIf="serverCreated; else noServer">Server was created, server Name is {{serverName}}</p>
+<ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
